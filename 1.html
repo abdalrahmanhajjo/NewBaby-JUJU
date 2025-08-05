@@ -1,0 +1,1246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome Baby Jumana (Juju)</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Arabic Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+       /* Base Styles */
+:root {
+  --primary: #ff85a2;
+  --secondary: #ffd6e0;
+  --accent: #a0e7e5;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  overflow-x: hidden;
+  background-color: #fff9fb;
+  padding-top: 70px; /* Space for fixed navbar */
+}
+
+.heading-font {
+  font-family: 'Playfair Display', serif;
+}
+
+.arabic-font {
+  font-family: 'Tajawal', sans-serif;
+}
+
+.rtl-direction {
+  direction: rtl;
+}
+
+/* Navigation - Fixed Styles */
+.navbar {
+  z-index: 1030;
+  opacity: 1 !important;
+  transform: none !important;
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  transition: none !important;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  background-color: rgba(255, 255, 255, 0.9) !important;
+}
+
+.navbar-brand {
+  transition: transform 0.3s;
+  font-weight: 700;
+}
+
+.navbar-brand:hover {
+  transform: scale(1.05);
+}
+
+.nav-link {
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--primary);
+  transition: width 0.3s;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.navbar-toggler {
+  border: none;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* Dropdown Menu */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  right: 0;
+  background-color: white;
+  min-width: 120px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.1);
+  border-radius: 8px;
+  overflow: hidden;
+  padding: 0;
+  border: none;
+}
+
+.dropdown-menu.show {
+  display: block;
+}
+
+.dropdown-item {
+  padding: 8px 16px;
+  display: block;
+  color: #333;
+  text-decoration: none;
+  transition: all 0.3s;
+  border: none;
+  background: none;
+  width: 100%;
+  text-align: left;
+}
+
+.dropdown-item:hover {
+  background-color: var(--secondary);
+}
+
+.dropdown-item.active {
+  background-color: var(--primary);
+  color: white;
+}
+
+/* Hero Section */
+.hero-section {
+  background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding-top: 70px;
+}
+
+.floating {
+  animation: floating 3s ease-in-out infinite;
+}
+
+@keyframes floating {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+  100% { transform: translateY(0px); }
+}
+
+/* About Section */
+.about-badge {
+  position: absolute;
+  background-color: var(--primary);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+/* Gallery Section */
+.gallery-item {
+  transition: all 0.3s ease;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.gallery-item:hover {
+  transform: scale(1.03);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.gallery-item img {
+  transition: transform 0.5s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.05);
+}
+
+/* Countdown Box */
+.countdown-box {
+  background: rgba(255,255,255,0.2);
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+  padding: 15px;
+}
+
+/* Buttons */
+.btn-primary {
+  background-color: var(--primary);
+  border-color: var(--primary);
+  transition: all 0.3s;
+}
+
+.btn-primary:hover {
+  background-color: #ff6b8b;
+  border-color: #ff6b8b;
+  transform: translateY(-2px);
+}
+
+.btn-outline-primary {
+  color: var(--primary);
+  border-color: var(--primary);
+}
+
+.btn-outline-primary:hover {
+  background-color: var(--primary);
+  color: white;
+}
+
+/* Animations */
+.pulse {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+/* Back to Top Button */
+#back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  background-color: var(--primary);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  z-index: 999;
+}
+
+#back-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+#back-to-top:hover {
+  background-color: #ff6b8b;
+  transform: translateY(-3px);
+}
+
+/* Form Styles */
+.form-control:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 0.25rem rgba(255, 133, 162, 0.25);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+  .navbar-collapse {
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  }
+  
+  .nav-item {
+    margin: 5px 0;
+  }
+  
+  .hero-section {
+    padding-top: 80px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    padding-top: 60px;
+  }
+  
+  .hero-section h1 {
+    font-size: 2.5rem;
+  }
+  
+  .hero-section h2 {
+    font-size: 1.8rem;
+  }
+}
+
+/* RTL Specific Styles */
+.rtl-direction .dropdown-menu {
+  right: auto;
+  left: 0;
+}
+
+.rtl-direction .nav-link::after {
+  left: auto;
+  right: 0;
+}
+
+.rtl-direction .navbar-brand {
+  margin-right: 0;
+  margin-left: auto;
+}
+
+/* Animation for elements */
+[data-aos] {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+[data-aos].aos-animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Language selector */
+.language-selector {
+  position: relative;
+  display: inline-block;
+}
+
+.language-dropdown {
+  display: none;
+  position: absolute;
+  right: 0;
+  min-width: 120px;
+  z-index: 1;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+  padding: 8px 0;
+}
+
+.language-selector:hover .language-dropdown {
+  display: block;
+}
+
+.language-option {
+  padding: 8px 16px;
+  display: block;
+  color: #333;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+.language-option:hover {
+  background-color: var(--secondary);
+}
+
+.language-option.active {
+  background-color: var(--primary);
+  color: white;
+}
+    </style>
+</head>
+<body>
+   <nav class="navbar navbar-expand-lg fixed-top bg-white/90 backdrop-blur-sm shadow-sm py-2">
+        <div class="container">
+            <a class="navbar-brand font-bold text-xl text-pink-600 heading-font flex items-center" href="#">
+                <i class="fas fa-baby-carriage mr-2"></i>Jumana
+            </a>
+            
+            <!-- Language Selector -->
+            <div class="language-selector me-3">
+                <button class="flex items-center text-gray-700 hover:text-pink-600">
+                    <i class="fas fa-language me-2"></i>
+                    <span id="current-language">English</span>
+                    <i class="fas fa-chevron-down ms-2"></i>
+                </button>
+                <div class="language-dropdown">
+                    <a href="#" class="language-option active" data-lang="en">English</a>
+                    <a href="#" class="language-option" data-lang="ar">العربية</a>
+                    <a href="#" class="language-option" data-lang="de">Deutsch</a>
+                </div>
+            </div>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item mx-2"><a class="nav-link hover:text-pink-600 px-3 py-2" href="#home">Home</a></li>
+                    <li class="nav-item mx-2"><a class="nav-link hover:text-pink-600 px-3 py-2" href="#about">About Juju</a></li>
+                    <li class="nav-item mx-2"><a class="nav-link hover:text-pink-600 px-3 py-2" href="#gallery">Gallery</a></li>
+                    <li class="nav-item mx-2"><a class="nav-link hover:text-pink-600 px-3 py-2" href="#wishes">Wishes</a></li>
+                    <li class="nav-item mx-2"><a class="nav-link hover:text-pink-600 px-3 py-2" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section min-h-screen flex items-center pt-20">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-5 mb-lg-0" data-aos="fade-right">
+                    <h1 class="text-5xl md:text-6xl font-bold text-white heading-font mb-4" data-i18n="hero.title">
+                        Welcome <span class="text-yellow-300">Jumana</span>
+                    </h1>
+                    <h2 class="text-3xl text-white mb-5" data-i18n="hero.subtitle">Our precious little <span class="text-yellow-300">"Juju"</span></h2>
+                    <p class="text-white text-lg mb-6" data-i18n="hero.description">With hearts full of joy, we welcome our beautiful baby girl to the world. Every tiny finger, every little toe is a miracle we'll cherish forever.</p>
+                    <div class="flex flex-wrap gap-3">
+                        <a href="#about" class="px-6 py-3 bg-white text-pink-600 rounded-full font-semibold hover:bg-yellow-300 transition-all" data-i18n="hero.button1">
+                            Meet Juju <i class="fas fa-arrow-down ml-2"></i>
+                        </a>
+                        <a href="#wishes" class="px-6 py-3 border-2 border-white text-white rounded-full font-semibold hover:bg-white hover:text-pink-600 transition-all" data-i18n="hero.button2">
+                            Send Wishes <i class="fas fa-heart ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-6" data-aos="fade-left">
+                    <div class="relative">
+                        <img src="1.png" 
+                             alt="Welcome Baby Jumana" 
+                             class="w-full rounded-2xl shadow-xl floating">
+                        <div class="absolute -bottom-5 -right-5 bg-yellow-300 text-pink-700 px-4 py-2 rounded-lg shadow-lg font-bold">
+                            <span data-i18n="hero.born">Born</span>: <span id="birth-date">March 2, 2025</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="container">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl font-bold text-pink-600 heading-font mb-3" data-i18n="about.title">About <span class="text-yellow-400">Jumana</span></h2>
+                <div class="w-20 h-1 bg-pink-400 mx-auto mb-6"></div>
+                <p class="text-gray-600 max-w-2xl mx-auto" data-i18n="about.subtitle">Our little princess has arrived, filling our lives with endless love and joy.</p>
+            </div>
+            
+            <div class="row align-items-center">
+                <div class="col-lg-5 mb-5 mb-lg-0" data-aos="fade-right">
+                    <div class="relative">
+                        <img src="2.jpg" 
+                             alt="Baby Jumana" 
+                             class="w-full rounded-2xl shadow-lg">
+                        <div class="absolute -bottom-5 -left-5 bg-pink-500 text-white px-4 py-3 rounded-lg shadow-lg">
+                            <div class="text-2xl font-bold"><span id="days-old">5</span> <span data-i18n="about.days">Days Old</span></div>
+                            <div class="text-xs" data-i18n="about.counting">And counting!</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-7" data-aos="fade-left">
+                    <div class="ps-lg-10">
+                        <h3 class="text-3xl font-bold text-gray-800 heading-font mb-4" data-i18n="about.meaning">The Meaning Behind <span class="text-pink-600">Jumana</span></h3>
+                        <p class="text-gray-600 mb-4" data-i18n="about.meaning_text">The name Jumana means "silver pearl" in Arabic, symbolizing purity, preciousness, and beauty. Our little Juju is indeed a rare and beautiful gem in our lives.</p>
+                        
+                        <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mb-6">
+                            <div class="bg-pink-50 p-4 rounded-lg text-center">
+                                <div class="text-pink-600 text-2xl mb-2">
+                                    <i class="fas fa-birthday-cake"></i>
+                                </div>
+                                <h4 class="font-bold text-gray-800" data-i18n="about.birth_date">Birth Date</h4>
+                                <p class="text-sm text-gray-600" id="birth-date-display">March 2, 2025</p>
+                            </div>
+                            <div class="bg-yellow-50 p-4 rounded-lg text-center">
+                                <div class="text-yellow-600 text-2xl mb-2">
+                                    <i class="fas fa-weight"></i>
+                                </div>
+                                <h4 class="font-bold text-gray-800" data-i18n="about.birth_weight">Birth Weight</h4>
+                                <p class="text-sm text-gray-600">3 kg</p>
+                            </div>
+                            <div class="bg-blue-50 p-4 rounded-lg text-center">
+                                <div class="text-blue-600 text-2xl mb-2">
+                                    <i class="fas fa-ruler-vertical"></i>
+                                </div>
+                                <h4 class="font-bold text-gray-800" data-i18n="about.birth_length">Birth Length</h4>
+                                <p class="text-sm text-gray-600">48 cm</p>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-gradient-to-r from-pink-100 to-yellow-100 p-6 rounded-xl mb-6">
+                            <h4 class="font-bold text-gray-800 text-xl mb-3" data-i18n="about.nickname">Nickname: <span class="text-pink-600">Juju</span></h4>
+                            <p class="text-gray-600" data-i18n="about.nickname_text">We lovingly call her "Juju" - a sweet, playful nickname that perfectly matches her cheerful personality. It's short, cute, and easy for her to say when she starts talking!</p>
+                        </div>
+                        
+                        <div class="flex flex-wrap gap-3">
+                            <a href="#gallery" class="px-6 py-3 bg-pink-600 text-white rounded-full font-semibold hover:bg-pink-700 transition-all" data-i18n="about.button1">
+                                See Photos <i class="fas fa-camera ml-2"></i>
+                            </a>
+                            <a href="#wishes" class="px-6 py-3 border-2 border-pink-600 text-pink-600 rounded-full font-semibold hover:bg-pink-600 hover:text-white transition-all" data-i18n="about.button2">
+                                Send Love <i class="fas fa-heart ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-20 bg-white">
+        <div class="container">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl font-bold text-pink-600 heading-font mb-3" data-i18n="gallery.title">Juju's <span class="text-yellow-400">Gallery</span></h2>
+                <div class="w-20 h-1 bg-pink-400 mx-auto mb-6"></div>
+                <p class="text-gray-600 max-w-2xl mx-auto" data-i18n="gallery.subtitle">Capturing every precious moment of our little angel</p>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
+                <!-- Gallery Item 1 -->
+                <div class="gallery-item overflow-hidden rounded-xl shadow-md hover:shadow-xl transition-all" data-aos="zoom-in">
+                    <img src="5.jpg" 
+                         alt="Baby Jumana" 
+                         class="w-full h-64 object-cover transition-transform duration-300 hover:scale-105">
+                    <div class="p-4 bg-white">
+                        <h4 class="font-bold text-gray-800" data-i18n="gallery.item1_title">First Day</h4>
+                        <p class="text-sm text-gray-600">August 2, 2025</p>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 2 -->
+                <div class="gallery-item overflow-hidden rounded-xl shadow-md hover:shadow-xl transition-all" data-aos="zoom-in" data-aos-delay="100">
+                    <img src="4.jpg" 
+                         alt="Baby Jumana sleeping" 
+                         class="w-full h-64 object-cover transition-transform duration-300 hover:scale-105">
+                    <div class="p-4 bg-white">
+                        <h4 class="font-bold text-gray-800" data-i18n="gallery.item2_title">Peaceful Sleep</h4>
+                        <p class="text-sm text-gray-600">August 3, 2025</p>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 3 -->
+                <div class="gallery-item overflow-hidden rounded-xl shadow-md hover:shadow-xl transition-all" data-aos="zoom-in" data-aos-delay="200">
+                    <img src="3.jpg" 
+                         alt="Baby Jumana with family" 
+                         class="w-full h-64 object-cover transition-transform duration-300 hover:scale-105">
+                    <div class="p-4 bg-white">
+                        <h4 class="font-bold text-gray-800" data-i18n="gallery.item3_title">With Loving Family</h4>
+                        <p class="text-sm text-gray-600">August 4, 2025</p>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 4 -->
+                <div class="gallery-item overflow-hidden rounded-xl shadow-md hover:shadow-xl transition-all" data-aos="zoom-in">
+                    <img src="2.jpg" 
+                         alt="Baby Jumana bath time" 
+                         class="w-full h-64 object-cover transition-transform duration-300 hover:scale-105">
+                    <div class="p-4 bg-white">
+                        <h4 class="font-bold text-gray-800" data-i18n="gallery.item4_title">Bath Time Fun</h4>
+                        <p class="text-sm text-gray-600">August 5, 2025</p>
+                    </div>
+                </div>
+               
+            
+            <div class="text-center" data-aos="fade-up">
+                <button id="load-more" class="px-6 py-3 border-2 border-pink-600 text-pink-600 rounded-full font-semibold hover:bg-pink-600 hover:text-white transition-all" data-i18n="gallery.button">
+                    Load More Photos <i class="fas fa-images ml-2"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Wishes Section -->
+    <section id="wishes" class="py-20 bg-gray-50">
+        <div class="container">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl font-bold text-pink-600 heading-font mb-3" data-i18n="wishes.title">Send Your <span class="text-yellow-400">Wishes</span></h2>
+                <div class="w-20 h-1 bg-pink-400 mx-auto mb-6"></div>
+                <p class="text-gray-600 max-w-2xl mx-auto" data-i18n="wishes.subtitle">Share your love and blessings for baby Jumana</p>
+            </div>
+            
+            <div class="max-w-3xl mx-auto">
+                <div class="bg-white rounded-xl shadow-md p-6 mb-10" data-aos="fade-up">
+                    <form id="wish-form">
+                        <div class="mb-4">
+                            <label for="name" class="block text-gray-700 font-medium mb-2" data-i18n="wishes.form.name">Your Name</label>
+                            <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-pink-500" required>
+                        </div>
+                        <div class="mb-4">
+                            <label for="message" class="block text-gray-700 font-medium mb-2" data-i18n="wishes.form.message">Your Message</label>
+                            <textarea id="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-pink-500" required></textarea>
+                        </div>
+                        <div class="mb-4">
+                            <label for="relationship" class="block text-gray-700 font-medium mb-2" data-i18n="wishes.form.relationship">Your Relationship to Jumana</label>
+                            <select id="relationship" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-pink-500">
+                                <option value="family" data-i18n="wishes.form.option1">Family</option>
+                                <option value="friend" data-i18n="wishes.form.option2">Friend</option>
+                                <option value="colleague" data-i18n="wishes.form.option3">Colleague</option>
+                                <option value="other" data-i18n="wishes.form.option4">Other</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="w-full px-6 py-3 bg-pink-600 text-white rounded-lg font-semibold hover:bg-pink-700 transition-all" data-i18n="wishes.form.button">
+                            Send Wish <i class="fas fa-paper-plane ml-2"></i>
+                        </button>
+                    </form>
+                </div>
+
+                <div id="wishes-container" class="space-y-4">
+                    <!-- Sample wish (can be removed or kept as example) -->
+                    <div class="bg-white p-4 rounded-lg shadow-sm" data-aos="fade-up">
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 bg-pink-100 text-pink-600 rounded-full w-10 h-10 flex items-center justify-center">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <div class="ml-3">
+                                <h4 class="font-bold text-gray-800">Grandma</h4>
+                                <p class="text-gray-600 text-sm mb-1">Family • Aug 2, 2025</p>
+                                <p class="text-gray-700" data-i18n="wishes.sample_message">Welcome to the world, precious Juju! You're the most beautiful baby and we're so happy you're here!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="container">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl font-bold text-pink-600 heading-font mb-3" data-i18n="contact.title">Contact <span class="text-yellow-400">Family</span></h2>
+                <div class="w-20 h-1 bg-pink-400 mx-auto mb-6"></div>
+                <p class="text-gray-600 max-w-2xl mx-auto" data-i18n="contact.subtitle">Get in touch with Jumana's parents</p>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-6 mb-8 mb-lg-0">
+                    <div class="bg-gray-50 p-8 rounded-xl h-full" data-aos="fade-right">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-6 heading-font" data-i18n="contact.form_title">Send a Message</h3>
+                        <form id="contact-form">
+                            <div class="mb-4">
+                                <label for="contact-name" class="block text-gray-700 font-medium mb-2" data-i18n="contact.form.name">Your Name</label>
+                                <input type="text" id="contact-name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-pink-500" required>
+                            </div>
+                            <div class="mb-4">
+                                <label for="contact-email" class="block text-gray-700 font-medium mb-2" data-i18n="contact.form.email">Your Email</label>
+                                <input type="email" id="contact-email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-pink-500" required>
+                            </div>
+                            <div class="mb-4">
+                                <label for="contact-subject" class="block text-gray-700 font-medium mb-2" data-i18n="contact.form.subject">Subject</label>
+                                <input type="text" id="contact-subject" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-pink-500" required>
+                            </div>
+                            <div class="mb-4">
+                                <label for="contact-message" class="block text-gray-700 font-medium mb-2" data-i18n="contact.form.message">Message</label>
+                                <textarea id="contact-message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-pink-500" required></textarea>
+                            </div>
+                            <button type="submit" class="w-full px-6 py-3 bg-pink-600 text-white rounded-lg font-semibold hover:bg-pink-700 transition-all" data-i18n="contact.form.button">
+                                Send Message <i class="fas fa-paper-plane ml-2"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+                
+               
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-8 mb-lg-0">
+                    <h3 class="text-2xl font-bold mb-4 heading-font">Jumana <span class="text-pink-400">"Juju"</span></h3>
+                    <p class="text-gray-400 mb-4" data-i18n="footer.description">Our precious baby girl who has brought endless joy to our lives.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-pink-400 transition-all">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-pink-400 transition-all">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-pink-400 transition-all">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 mb-8 mb-md-0">
+                    <h4 class="text-lg font-bold mb-4 heading-font" data-i18n="footer.links_title">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-gray-400 hover:text-pink-400 transition-all" data-i18n="nav.home">Home</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-pink-400 transition-all" data-i18n="nav.about">About Juju</a></li>
+                        <li><a href="#gallery" class="text-gray-400 hover:text-pink-400 transition-all" data-i18n="nav.gallery">Gallery</a></li>
+                        <li><a href="#wishes" class="text-gray-400 hover:text-pink-400 transition-all" data-i18n="nav.wishes">Send Wishes</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-pink-400 transition-all" data-i18n="nav.contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-4 mb-8 mb-md-0">
+                    <h4 class="text-lg font-bold mb-4 heading-font" data-i18n="footer.milestones_title">Milestones</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-pink-400 transition-all" data-i18n="footer.milestone1">First Smile</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-pink-400 transition-all" data-i18n="footer.milestone2">First Coos</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-pink-400 transition-all" data-i18n="footer.milestone3">First Toy</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-pink-400 transition-all" data-i18n="footer.milestone4">Monthly Updates</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-4">
+                    <h4 class="text-lg font-bold mb-4 heading-font" data-i18n="footer.newsletter_title">Newsletter</h4>
+                    <p class="text-gray-400 mb-4" data-i18n="footer.newsletter_text">Subscribe to get updates on Juju's growth and milestones.</p>
+                    <form class="flex">
+                        <input type="email" placeholder="Your email" class="px-4 py-2 rounded-l-lg focus:outline-none text-gray-900 w-full" data-i18n="footer.newsletter_placeholder" data-i18n-attr="placeholder">
+                        <button type="submit" class="bg-pink-600 text-white px-4 py-2 rounded-r-lg hover:bg-pink-700 transition-all">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-10 pt-6 text-center text-gray-400">
+                <p data-i18n="footer.copyright">&copy; 2025 Baby Jumana. All rights reserved. Made with <i class="fas fa-heart text-pink-400"></i> by Family</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" id="back-to-top" class="fixed bottom-8 right-8 w-12 h-12 bg-pink-600 text-white rounded-full flex items-center justify-center shadow-lg hover:bg-pink-700 transition-all opacity-0 invisible">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JS -->
+    <script>
+        // Internationalization (i18n) Implementation
+        const translations = {
+            en: {
+                // Navigation
+                "nav.home": "Home",
+                "nav.about": "About Juju",
+                "nav.gallery": "Gallery",
+                "nav.wishes": "Wishes",
+                "nav.contact": "Contact",
+                
+                // Language selector
+                "language.english": "English",
+                "language.arabic": "Arabic",
+                "language.german": "German",
+                
+                // Hero section
+                "hero.title": "Welcome <span class='text-yellow-300'>Jumana</span>",
+                "hero.subtitle": "Our precious little <span class='text-yellow-300'>\"Juju\"</span>",
+                "hero.description": "With hearts full of joy, we welcome our beautiful baby girl to the world. Every tiny finger, every little toe is a miracle we'll cherish forever.",
+                "hero.button1": "Meet Juju <i class='fas fa-arrow-down ml-2'></i>",
+                "hero.button2": "Send Wishes <i class='fas fa-heart ml-2'></i>",
+                "hero.born": "Born",
+                
+                // About section
+                "about.title": "About <span class='text-yellow-400'>Jumana</span>",
+                "about.subtitle": "Our little princess has arrived, filling our lives with endless love and joy.",
+                "about.meaning": "The Meaning Behind <span class='text-pink-600'>Jumana</span>",
+                "about.meaning_text": "The name Jumana means \"silver pearl\" in Arabic, symbolizing purity, preciousness, and beauty. Our little Juju is indeed a rare and beautiful gem in our lives.",
+                "about.birth_date": "Birth Date",
+                "about.birth_weight": "Birth Weight",
+                "about.birth_length": "Birth Length",
+                "about.nickname": "Nickname: <span class='text-pink-600'>Juju</span>",
+                "about.nickname_text": "We lovingly call her \"Juju\" - a sweet, playful nickname that perfectly matches her cheerful personality. It's short, cute, and easy for her to say when she starts talking!",
+                "about.button1": "See Photos <i class='fas fa-camera ml-2'></i>",
+                "about.button2": "Send Love <i class='fas fa-heart ml-2'></i>",
+                "about.days": "Days Old",
+                "about.counting": "And counting!",
+                
+                // Gallery section
+                "gallery.title": "Juju's <span class='text-yellow-400'>Gallery</span>",
+                "gallery.subtitle": "Capturing every precious moment of our little angel",
+                "gallery.item1_title": "First Day Home",
+                "gallery.item2_title": "Peaceful Sleep",
+                "gallery.item3_title": "With Loving Family",
+                "gallery.item4_title": "Bath Time Fun",
+                "gallery.item5_title": "First Smile",
+                "gallery.item6_title": "With Teddy Bear",
+                "gallery.button": "Load More Photos <i class='fas fa-images ml-2'></i>",
+                
+                // Wishes section
+                "wishes.title": "Send Your <span class='text-yellow-400'>Wishes</span>",
+                "wishes.subtitle": "Share your love and blessings for baby Jumana",
+                "wishes.form.name": "Your Name",
+                "wishes.form.message": "Your Message",
+                "wishes.form.relationship": "Your Relationship to Jumana",
+                "wishes.form.option1": "Family",
+                "wishes.form.option2": "Friend",
+                "wishes.form.option3": "Colleague",
+                "wishes.form.option4": "Other",
+                "wishes.form.button": "Send Wish <i class='fas fa-paper-plane ml-2'></i>",
+                "wishes.sample_message": "Welcome to the world, precious Juju! You're the most beautiful baby and we're so happy you're here!",
+                
+                // Contact section
+                "contact.title": "Contact <span class='text-yellow-400'>Family</span>",
+                "contact.subtitle": "Get in touch with Jumana's parents",
+                "contact.form_title": "Send a Message",
+                "contact.form.name": "Your Name",
+                "contact.form.email": "Your Email",
+                "contact.form.subject": "Subject",
+                "contact.form.message": "Message",
+                "contact.form.button": "Send Message <i class='fas fa-paper-plane ml-2'></i>",
+                "contact.info_title": "Contact Information",
+                "contact.info.address": "Address",
+                "contact.info.phone": "Phone",
+                "contact.info.email": "Email",
+                "contact.visit_title": "Visit Us",
+                "contact.map_placeholder": "Map would appear here",
+                
+                // Footer
+                "footer.description": "Our precious baby girl who has brought endless joy to our lives.",
+                "footer.links_title": "Quick Links",
+                "footer.milestones_title": "Milestones",
+                "footer.milestone1": "First Smile",
+                "footer.milestone2": "First Coos",
+                "footer.milestone3": "First Toy",
+                "footer.milestone4": "Monthly Updates",
+                "footer.newsletter_title": "Newsletter",
+                "footer.newsletter_text": "Subscribe to get updates on Juju's growth and milestones.",
+                "footer.newsletter_placeholder": "Your email",
+                "footer.copyright": "&copy; 2025 Baby Jumana. All rights reserved. Made with <i class='fas fa-heart text-pink-400'></i> by Family"
+            },
+            ar: {
+                // Navigation
+                "nav.home": "الرئيسية",
+                "nav.about": "عن جوجو",
+                "nav.gallery": "معرض الصور",
+                "nav.wishes": "التعليقات",
+                "nav.contact": "اتصل بنا",
+                
+                // Language selector
+                "language.english": "الإنجليزية",
+                "language.arabic": "العربية",
+                "language.german": "الألمانية",
+                
+                // Hero section
+                "hero.title": "مرحباً <span class='text-yellow-300'>جمانا</span>",
+                "hero.subtitle": "فتاتنا الصغيرة الغالية <span class='text-yellow-300'>\"جوجو\"</span>",
+                "hero.description": "بقلوب مليئة بالفرح، نرحب بفتاتنا الجميلة إلى العالم. كل إصبع صغير، كل إصبع قدم هو معجزة سنعتز بها إلى الأبد.",
+                "hero.button1": "تعرف على جوجو <i class='fas fa-arrow-down ml-2'></i>",
+                "hero.button2": "أرسل تمنياتك <i class='fas fa-heart ml-2'></i>",
+                "hero.born": "تاريخ الميلاد",
+                
+                // About section
+                "about.title": "عن <span class='text-yellow-400'>جمانا</span>",
+                "about.subtitle": "لقد وصلت أميرتنا الصغيرة، ملأت حياتنا بحب لا ينتهي وفرح.",
+                "about.meaning": "معنى اسم <span class='text-pink-600'>جمانا</span>",
+                "about.meaning_text": "اسم جمانا يعني \"اللؤلؤة الفضية\" في العربية، مما يرمز للنقاء والثمين والجمال. جوجو الصغيرة هي بالفعل جوهرة نادرة وجميلة في حياتنا.",
+                "about.birth_date": "تاريخ الميلاد",
+                "about.birth_weight": "الوزن عند الولادة",
+                "about.birth_length": "الطول عند الولادة",
+                "about.nickname": "اللقب: <span class='text-pink-600'>جوجو</span>",
+                "about.nickname_text": "نحن نناديها بحب \"جوجو\" - لقب لطيف ومرح يناسب شخصيتها المرحة تماماً. إنه قصير، لطيف وسهل لها أن تقوله عندما تبدأ بالكلام!",
+                "about.button1": "شاهد الصور <i class='fas fa-camera ml-2'></i>",
+                "about.button2": "أرسل حبك <i class='fas fa-heart ml-2'></i>",
+                "about.days": "يوم من العمر",
+                "about.counting": "والعد مستمر!",
+                
+                // Gallery section
+                "gallery.title": "<span class='text-yellow-400'>معرض</span> جوجو",
+                "gallery.subtitle": "نوثق كل اللحظات الثمينة لملاكنا الصغير",
+                "gallery.item1_title": "أول يوم في المنزل",
+                "gallery.item2_title": "نوم هادئ",
+                "gallery.item3_title": "مع العائلة المحبة",
+                "gallery.item4_title": "وقت الاستحمام الممتع",
+                "gallery.item5_title": "أول ابتسامة",
+                "gallery.item6_title": "مع الدبدوب",
+                "gallery.button": "المزيد من الصور <i class='fas fa-images ml-2'></i>",
+                
+                // Wishes section
+                "wishes.title": "أرسل <span class='text-yellow-400'>تمنياتك</span>",
+                "wishes.subtitle": "شارك حبك وبركاتك لطفلتنا جمانا",
+                "wishes.form.name": "اسمك",
+                "wishes.form.message": "رسالتك",
+                "wishes.form.relationship": "علاقتك بجمانا",
+                "wishes.form.option1": "عائلة",
+                "wishes.form.option2": "صديق",
+                "wishes.form.option3": "زميل",
+                "wishes.form.option4": "آخر",
+                "wishes.form.button": "أرسل التمنيات <i class='fas fa-paper-plane ml-2'></i>",
+                "wishes.sample_message": "مرحباً بك في العالم، جوجو الغالية! أنتِ الطفلة الأجمل ونحن سعداء جداً بوجودك!",
+                
+                // Contact section
+                "contact.title": "اتصل <span class='text-yellow-400'>بالعائلة</span>",
+                "contact.subtitle": "تواصل مع والدي جمانا",
+                "contact.form_title": "أرسل رسالة",
+                "contact.form.name": "اسمك",
+                "contact.form.email": "بريدك الإلكتروني",
+                "contact.form.subject": "الموضوع",
+                "contact.form.message": "الرسالة",
+                "contact.form.button": "أرسل الرسالة <i class='fas fa-paper-plane ml-2'></i>",
+                "contact.info_title": "معلومات الاتصال",
+                "contact.info.address": "العنوان",
+                "contact.info.phone": "الهاتف",
+                "contact.info.email": "البريد الإلكتروني",
+                "contact.visit_title": "زورونا",
+                "contact.map_placeholder": "الخريطة ستظهر هنا",
+                
+                // Footer
+                "footer.description": "فتاتنا الغالية التي جلبت لنا فرحاً لا ينتهي.",
+                "footer.links_title": "روابط سريعة",
+                "footer.milestones_title": "محطات مهمة",
+                "footer.milestone1": "أول ابتسامة",
+                "footer.milestone2": "أول أصوات",
+                "footer.milestone3": "أول لعبة",
+                "footer.milestone4": "تحديثات شهرية",
+                "footer.newsletter_title": "النشرة البريدية",
+                "footer.newsletter_text": "اشترك للحصول على آخر أخبار نمو وتطور جوجو.",
+                "footer.newsletter_placeholder": "بريدك الإلكتروني",
+                "footer.copyright": "&copy; 2025 الطفلة جمانا. جميع الحقوق محفوظة. صنع بـ <i class='fas fa-heart text-pink-400'></i> من قبل العائلة"
+            },
+            de: {
+                // Navigation
+                "nav.home": "Startseite",
+                "nav.about": "Über Juju",
+                "nav.gallery": "Galerie",
+                "nav.wishes": "Wünsche",
+                "nav.contact": "Kontakt",
+                
+                // Language selector
+                "language.english": "Englisch",
+                "language.arabic": "Arabisch",
+                "language.german": "Deutsch",
+                
+                // Hero section
+                "hero.title": "Willkommen <span class='text-yellow-300'>Jumana</span>",
+                "hero.subtitle": "Unser kostbares kleines <span class='text-yellow-300'>\"Juju\"</span>",
+                "hero.description": "Mit Herzen voller Freude begrüßen wir unser wunderschönes Baby-Mädchen in der Welt. Jeder winzige Finger, jeder kleine Zeh ist ein Wunder, das wir für immer schätzen werden.",
+                "hero.button1": "Triff Juju <i class='fas fa-arrow-down ml-2'></i>",
+                "hero.button2": "Wünsche senden <i class='fas fa-heart ml-2'></i>",
+                "hero.born": "Geboren",
+                
+                // About section
+                "about.title": "Über <span class='text-yellow-400'>Jumana</span>",
+                "about.subtitle": "Unsere kleine Prinzessin ist angekommen und erfüllt unser Leben mit endloser Liebe und Freude.",
+                "about.meaning": "Die Bedeutung von <span class='text-pink-600'>Jumana</span>",
+                "about.meaning_text": "Der Name Jumana bedeutet auf Arabisch \"silberne Perle\" und symbolisiert Reinheit, Kostbarkeit und Schönheit. Unser kleines Juju ist in der Tat ein seltener und schöner Edelstein in unserem Leben.",
+                "about.birth_date": "Geburtsdatum",
+                "about.birth_weight": "Geburtsgewicht",
+                "about.birth_length": "Geburtsgröße",
+                "about.nickname": "Spitzname: <span class='text-pink-600'>Juju</span>",
+                "about.nickname_text": "Wir nennen sie liebevoll \"Juju\" - ein süßer, verspielter Spitzname, der perfekt zu ihrer fröhlichen Persönlichkeit passt. Er ist kurz, niedlich und für sie leicht auszusprechen, wenn sie anfängt zu reden!",
+                "about.button1": "Fotos ansehen <i class='fas fa-camera ml-2'></i>",
+                "about.button2": "Liebe senden <i class='fas fa-heart ml-2'></i>",
+                "about.days": "Tage alt",
+                "about.counting": "Und es werden mehr!",
+                
+                // Gallery section
+                "gallery.title": "Jujus <span class='text-yellow-400'>Galerie</span>",
+                "gallery.subtitle": "Jeden kostbaren Moment unseres kleinen Engels festhalten",
+                "gallery.item1_title": "Erster Tag zu Hause",
+                "gallery.item2_title": "Friedlicher Schlaf",
+                "gallery.item3_title": "Mit liebevoller Familie",
+                "gallery.item4_title": "Badespaß",
+                "gallery.item5_title": "Erstes Lächeln",
+                "gallery.item6_title": "Mit Teddybär",
+                "gallery.button": "Mehr Fotos laden <i class='fas fa-images ml-2'></i>",
+                
+                // Wishes section
+                "wishes.title": "Sende deine <span class='text-yellow-400'>Wünsche</span>",
+                "wishes.subtitle": "Teile deine Liebe und Segenswünsche für Baby Jumana",
+                "wishes.form.name": "Dein Name",
+                "wishes.form.message": "Deine Nachricht",
+                "wishes.form.relationship": "Deine Beziehung zu Jumana",
+                "wishes.form.option1": "Familie",
+                "wishes.form.option2": "Freund",
+                "wishes.form.option3": "Kollege",
+                "wishes.form.option4": "Andere",
+                "wishes.form.button": "Wunsch senden <i class='fas fa-paper-plane ml-2'></i>",
+                "wishes.sample_message": "Willkommen in der Welt, liebes Juju! Du bist das schönste Baby und wir sind so glücklich, dass du da bist!",
+                
+                // Contact section
+                "contact.title": "Kontakt zur <span class='text-yellow-400'>Familie</span>",
+                "contact.subtitle": "Kontaktiere Jumanas Eltern",
+                "contact.form_title": "Nachricht senden",
+                "contact.form.name": "Dein Name",
+                "contact.form.email": "Deine E-Mail",
+                "contact.form.subject": "Betreff",
+                "contact.form.message": "Nachricht",
+                "contact.form.button": "Nachricht senden <i class='fas fa-paper-plane ml-2'></i>",
+                "contact.info_title": "Kontaktinformationen",
+                "contact.info.address": "Adresse",
+                "contact.info.phone": "Telefon",
+                "contact.info.email": "E-Mail",
+                "contact.visit_title": "Besuche uns",
+                "contact.map_placeholder": "Karte würde hier erscheinen",
+                
+                // Footer
+                "footer.description": "Unser kostbares Baby-Mädchen, das unser Leben mit endloser Freude erfüllt hat.",
+                "footer.links_title": "Schnellzugriff",
+                "footer.milestones_title": "Meilensteine",
+                "footer.milestone1": "Erstes Lächeln",
+                "footer.milestone2": "Erste Laute",
+                "footer.milestone3": "Erstes Spielzeug",
+                "footer.milestone4": "Monatliche Updates",
+                "footer.newsletter_title": "Newsletter",
+                "footer.newsletter_text": "Abonniere Updates über Jujus Wachstum und Meilensteine.",
+                "footer.newsletter_placeholder": "Deine E-Mail",
+                "footer.copyright": "&copy; 2025 Baby Jumana. Alle Rechte vorbehalten. Hergestellt mit <i class='fas fa-heart text-pink-400'></i> von der Familie"
+            }
+        };
+
+        // Current language
+        let currentLanguage = 'en';
+
+        // Main initialization function
+        function initializeApp() {
+            // Initialize Bootstrap components
+            const navbarCollapse = new bootstrap.Collapse(document.getElementById('navbarNav'), {
+                toggle: false
+            });
+            
+            // Force navbar to stay visible
+            const navbar = document.querySelector('.navbar');
+            if (navbar) {
+                navbar.style.display = 'block';
+                navbar.style.opacity = '1';
+            }
+            
+            // Set up language switching
+            document.querySelectorAll('.language-option').forEach(option => {
+                option.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const lang = this.getAttribute('data-lang');
+                    changeLanguage(lang);
+                    
+                    // Update active state
+                    document.querySelectorAll('.language-option').forEach(opt => 
+                        opt.classList.remove('active'));
+                    this.classList.add('active');
+                });
+            });
+            
+            // Calculate days old
+            updateDaysOld();
+            
+            // Set initial birth date display
+            updateBirthDate();
+            
+            // Set up other event listeners
+            setupEventListeners();
+            
+            // Initial language setup
+            changeLanguage(currentLanguage);
+            
+            // Initialize animations
+            initAnimations();
+        }
+
+        // Change language function
+        function changeLanguage(lang) {
+            currentLanguage = lang;
+            
+            // Update all translatable elements
+            document.querySelectorAll('[data-i18n]').forEach(element => {
+                const key = element.getAttribute('data-i18n');
+                if (translations[lang][key]) {
+                    if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+                        element.placeholder = translations[lang][key];
+                    } else {
+                        element.innerHTML = translations[lang][key];
+                    }
+                }
+            });
+            
+            // Update current language display
+            document.getElementById('current-language').textContent = 
+                lang === 'en' ? 'English' : 
+                lang === 'ar' ? 'العربية' : 
+                'Deutsch';
+            
+            // Update RTL/LTR direction
+            if (lang === 'ar') {
+                document.body.classList.add('rtl-direction', 'arabic-font');
+            } else {
+                document.body.classList.remove('rtl-direction', 'arabic-font');
+            }
+            
+            // Update dates with new language
+            updateBirthDate();
+        }
+
+        // Update birth date display
+        function updateBirthDate() {
+            const birthDate = new Date('2025-08-02');
+            const options = { year: 'numeric', month: 'long', day: 'numeric' };
+            const formattedDate = birthDate.toLocaleDateString(currentLanguage, options);
+            
+            document.getElementById('birth-date').textContent = formattedDate;
+            document.getElementById('birth-date-display').textContent = formattedDate;
+        }
+
+        // Calculate days old
+        function updateDaysOld() {
+            const birthDate = new Date('2025-08-02');
+            const today = new Date();
+            const diffTime = today - birthDate;
+            const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+            
+            document.getElementById('days-old').textContent = diffDays;
+        }
+
+        // Initialize animations
+        function initAnimations() {
+            const animateElements = document.querySelectorAll('[data-aos]');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('aos-animate');
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+            
+            animateElements.forEach(el => observer.observe(el));
+        }
+
+        // Set up all event listeners
+        function setupEventListeners() {
+            // Back to top button
+            const backToTopButton = document.getElementById('back-to-top');
+            if (backToTopButton) {
+                window.addEventListener('scroll', function() {
+                    if (window.pageYOffset > 300) {
+                        backToTopButton.classList.remove('opacity-0', 'invisible');
+                        backToTopButton.classList.add('opacity-100', 'visible');
+                    } else {
+                        backToTopButton.classList.remove('opacity-100', 'visible');
+                        backToTopButton.classList.add('opacity-0', 'invisible');
+                    }
+                });
+                
+                backToTopButton.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                });
+            }
+            
+            // Form submissions
+            const wishForm = document.getElementById('wish-form');
+            if (wishForm) {
+                wishForm.addEventListener('submit', handleWishSubmit);
+            }
+            
+            const contactForm = document.getElementById('contact-form');
+            if (contactForm) {
+                contactForm.addEventListener('submit', handleContactSubmit);
+            }
+            
+            // Load more photos button
+            const loadMoreBtn = document.getElementById('load-more');
+            if (loadMoreBtn) {
+                loadMoreBtn.addEventListener('click', handleLoadMore);
+            }
+            
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', handleSmoothScroll);
+            });
+            
+            // Close mobile menu when clicking a link
+            document.querySelectorAll('#navbarNav .nav-link').forEach(link => {
+                link.addEventListener('click', () => {
+                    const navbarCollapse = bootstrap.Collapse.getInstance(document.getElementById('navbarNav'));
+                    if (navbarCollapse) {
+                        navbarCollapse.hide();
+                    }
+                });
+            });
+        }
+
+        // Form handler functions
+        function handleWishSubmit(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const message = document.getElementById('message').value;
+            const relationship = document.getElementById('relationship').value;
+            
+            const today = new Date();
+            const dateStr = today.toLocaleDateString(currentLanguage, { 
+                month: 'long', day: 'numeric', year: 'numeric' 
+            });
+            
+            const relationshipText = document.querySelector(`#relationship option[value="${relationship}"]`).textContent;
+            
+            const wishHTML = `
+                <div class="bg-white p-4 rounded-lg shadow-sm" data-aos="fade-up">
+                    <div class="flex items-start">
+                        <div class="flex-shrink-0 bg-${getRandomColor()}-100 text-${getRandomColor()}-600 rounded-full w-10 h-10 flex items-center justify-center">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="ml-3">
+                            <h4 class="font-bold text-gray-800">${name}</h4>
+                            <p class="text-gray-600 text-sm mb-1">${relationshipText} • ${dateStr}</p>
+                            <p class="text-gray-700">${message}</p>
+                        </div>
+                    </div>
+                </div>
+            `;
+            
+            document.getElementById('wishes-container').insertAdjacentHTML('afterbegin', wishHTML);
+            this.reset();
+            
+            // Show success message
+            alert(currentLanguage === 'en' ? 'Thank you for your beautiful wish for Jumana!' : 
+                  currentLanguage === 'ar' ? 'شكراً على تمنياتك الجميلة لجمانا!' :
+                  'Vielen Dank für deinen schönen Wunsch für Jumana!');
+        }
+
+        function handleContactSubmit(e) {
+            e.preventDefault();
+            this.reset();
+            alert(currentLanguage === 'en' ? 'Thank you for your message! Jumana\'s family will get back to you soon.' : 
+                  currentLanguage === 'ar' ? 'شكراً على رسالتك! عائلة جمانا ستتواصل معك قريباً.' :
+                  'Vielen Dank für deine Nachricht! Jumanas Familie wird sich bald bei dir melden.');
+        }
+
+        function handleLoadMore() {
+            alert(currentLanguage === 'en' ? 'More photos of Juju would load here in a real implementation!' : 
+                  currentLanguage === 'ar' ? 'المزيد من صور جوجو سيتم تحميلها هنا في التنفيذ الفعلي!' :
+                  'Mehr Fotos von Juju würden hier in einer echten Implementierung geladen werden!');
+        }
+
+        function handleSmoothScroll(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            if (targetId === '#') return;
+            
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                targetElement.scrollIntoView({
+                    behavior: 'smooth'
+                });
+            }
+        }
+
+        // Helper functions
+        function getRandomColor() {
+            const colors = ['pink', 'blue', 'yellow', 'green', 'purple'];
+            return colors[Math.floor(Math.random() * colors.length)];
+        }
+
+        // Initialize the app when DOM is loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeApp();
+        });
+    </script>
+</body>
+</html>
